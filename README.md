@@ -1,4 +1,4 @@
-# Codenixia Course Advisor Chatbot
+# CHATBOTX Course Advisor Chatbot
 
 A multi-interface chatbot application designed to help prospective students with course inquiries. The chatbot provides information about courses, fees, syllabus, batch schedules, and enrollment processes using the GROQ API with the Llama 3.3 model.
 
@@ -20,11 +20,12 @@ A multi-interface chatbot application designed to help prospective students with
 ```
 CHATBOTX/
 ├── app.py              # Streamlit web UI application
-├── bot.py              # Core chatbot logic and GROQ API integration
+├── bot.py              # Core chatbot logic with prompt detection
 ├── chatbot.py          # Command-line interface (CLI)
-├── server.py           # Flask REST API server
+├── server.py           # Flask REST API server with HTML UI
 ├── config.py           # Central configuration management
-├── prompts.py          # System prompt and course data
+├── prompts.py          # Multiple system prompts for different contexts
+├── index.html          # Modern web interface (CSS + JavaScript)
 ├── requirements.txt    # Python dependencies
 └── README.md          # Project documentation
 ```
@@ -125,10 +126,11 @@ python chatbot.py
 
 ### 3. Flask REST API Server
 
-HTTP API for programmatic access with:
+HTTP API with built-in Web UI:
 - Session-based conversation management
 - JSON request/response format
 - Health check endpoint
+- **Modern HTML/CSS Web Interface** - Beautiful, responsive UI
 - Quick questions endpoint
 
 **Run**:
@@ -136,11 +138,48 @@ HTTP API for programmatic access with:
 python server.py
 ```
 
-**Base URL**: `http://localhost:5000`
+**Access**:
+- **Web UI**: `http://localhost:5000` - Interactive web interface with modern design
+- **API Base**: `http://localhost:5000`
 
 ---
 
-## API Endpoints
+## Web Interface Features
+
+The modern HTML/CSS web interface (`index.html`) provides an elegant user experience:
+
+### Design Features
+- **Modern Gradient UI**: Purple-to-indigo gradient theme with smooth animations
+- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
+- **Real-time Chat**: Instant message display with typing animations
+- **Auto-scrolling**: Chat automatically scrolls to latest message
+- **Message Animations**: Smooth slide-in animations for new messages
+
+### Functionality
+- **Session Management**: Auto-generates unique session IDs
+- **Conversation History**: Maintains full chat history in current session
+- **Reset Button**: Clear conversation and start fresh anytime
+- **Send Button**: Easy message sending with visual feedback
+- **Status Badge**: Shows online status in real-time
+- **Typing Indicator**: Animated typing dots while waiting for response
+
+### User Experience
+- **Auto-resizing Textarea**: Input area expands as you type
+- **Enter to Send**: Press Enter to send, Shift+Enter for new line
+- **Helpful Placeholders**: Clear input guidance
+- **Scroll Bar**: Styled scrollbar for better aesthetics
+- **Focus Management**: Auto-focuses input on page load
+- **Error Handling**: User-friendly error messages
+
+### Visual Design
+- Clean, modern aesthetic with professional color scheme
+- Smooth transitions and hover effects
+- Distinct user vs bot message styling
+- Custom scrollbar styling
+- Mobile-optimized layout with breakpoints
+- Accessibility-friendly design
+
+---
 
 ### GET `/`
 Health check and API information
@@ -218,8 +257,8 @@ Get list of quick questions
 
 ## Enrollment
 
-- **Website**: codenixia.com/enroll
-- **Email**: admissions@codenixia.com
+- **Website**: chatbotx.com/enroll
+- **Email**: admissions@chatbotx.com
 - **Phone**: 1800-XXX-XXXX (Mon-Sat, 10 AM - 6 PM IST)
 
 ---
@@ -227,9 +266,10 @@ Get list of quick questions
 ## Core Modules
 
 ### `bot.py`
-Core chatbot logic with GROQ API integration
-- `chat(history, user_message)`: Non-streaming chat response
-- `stream_chat(history, user_message)`: Streaming chat responses
+Core chatbot logic with GROQ API integration and intelligent prompt selection
+- `detect_prompt_type(user_message)`: Analyzes message and selects appropriate prompt
+- `chat(history, user_message)`: Non-streaming chat response with smart prompt selection
+- `stream_chat(history, user_message)`: Streaming chat responses with smart prompt selection
 - `new_conversation()`: Initialize empty conversation history
 
 ### `config.py`
@@ -239,10 +279,13 @@ Centralized configuration management
 - Course information and quick questions
 
 ### `prompts.py`
-System prompt and course database
-- Comprehensive system prompt defining chatbot behavior
-- Course details (fees, syllabus, duration, etc.)
-- Enrollment information and rules
+Multiple system prompts for different contexts
+- **SYSTEM_PROMPT**: Course advisor for general inquiries
+- **TECHNICAL_SUPPORT_PROMPT**: Technical troubleshooting and platform issues
+- **FAQ_PROMPT**: Frequently asked questions with quick answers
+- **PLACEMENT_ASSISTANT_PROMPT**: Career guidance and job placement support
+- **CAREER_ADVISOR_PROMPT**: Career path recommendations based on goals
+- **Smart Prompt Detection**: Automatically selects appropriate prompt based on user query
 
 ### `app.py`
 Streamlit web interface
@@ -340,17 +383,17 @@ Response
 
 ## License
 
-Proprietary - Codenixia 2026
+Propriatary - CHATBOTX 2026
 
 ---
 
 ## Support
 
 For technical support or inquiries:
-- Email: admissions@codenixia.com
+- Email: admissions@chatbotx.com
 - Phone: 1800-XXX-XXXX (Mon-Sat, 10 AM - 6 PM IST)
-- Website: codenixia.com
+- Website: chatbotx.com
 
 ---
 
-**Built with Claude AI · Codenixia 2026**
+**Built with Claude AI · CHATBOTX 2026**
