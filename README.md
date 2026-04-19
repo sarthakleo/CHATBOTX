@@ -1,6 +1,6 @@
 
 # CHATBOTX Course Advisor Chatbot
-=======
+
 #  Course Advisor Chatbot
 
 A multi-interface chatbot application designed to help prospective students with course inquiries. The chatbot provides information about courses, fees, syllabus, batch schedules, and enrollment processes using the GROQ API with the Llama 3.3 model.
