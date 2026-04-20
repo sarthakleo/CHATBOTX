@@ -399,4 +399,4 @@ For technical support or inquiries:
 
 ---
 
-**Built with Claude AI · CHATBOTX 2026**
+*  CHATBOTX 2026**
