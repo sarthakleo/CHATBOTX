@@ -41,7 +41,7 @@ Batch end : 31 Janurary 2026
 Registration deadline : 20 June 2026
 Registration fee : Rs.999 (fully adjustable toward course fee)
 Enroll at : aitech.com/enroll
-Email : admissions@aitech.com
+Email : admission@aitech.com
 Phone : 1800-XXX-XXXX (Mon-Sat, 10 AM - 6 PM IST)
 
 === RULES ===
